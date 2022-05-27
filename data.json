@@ -1,0 +1,173 @@
+{
+    "thong_tin_ca_nhan":{
+        "name": "Phạm Văn Mèo",
+        "date": "3/25/2022",
+        "country": "Gia Lai",
+        "weedding": true,
+        "sex": true,
+        "CMND": "203023240",
+        "nationality": "Việt Nam",
+        "number_household": "321",
+        "folk": "Kinh",
+        "work": "Làm nông",
+        "now_live": "123 Trần Phú, Gia lai",
+        "img": "http://dummyimage.com/166x100.png/cc0000/ffffff",
+        "matKhau":"1234"
+    },
+    "thanh_vien": [
+      {
+        "name": "Nguyễn Văn A",
+        "date": "3/25/2022",
+        "country": "46 Roxbury Hill",
+        "weedding": true,
+        "sex": true,
+        "CMND": 203023240,
+        "nationality": "Việt Nam",
+        "number_household": "321",
+        "folk": "Kinh",
+        "img": "http://dummyimage.com/166x100.png/cc0000/ffffff",
+        "matKhau":"1234"
+      },
+      {
+        "name": "Nguyễn Văn B",
+        "date": "3/25/2022",
+        "country": "46 Roxbury Hill",
+        "weedding": false,
+        "sex": true,
+        "CMND": 203023240,
+        "nationality": "Việt Nam",
+        "number_household": "321",
+        "folk": "Kinh",
+        "img": "http://dummyimage.com/166x100.png/cc0000/ffffff",
+        "matKhau":"1234"
+      },
+      {
+        "name": "Nguyễn Văn C",
+        "date": "3/25/2022",
+        "country": "46 Roxbury Hill",
+        "weedding": true,
+        "sex": true,
+        "CMND": 203023240,
+        "nationality": "Việt Nam",
+        "number_household": "321",
+        "folk": "Kinh",
+        "img": "http://dummyimage.com/166x100.png/cc0000/ffffff",
+        "matKhau":"1234"
+      },
+      {
+        "name": "Nguyễn Thị D",
+        "date": "3/25/2022",
+        "country": "46 Roxbury Hill",
+        "weedding": false,
+        "sex": true,
+        "CMND": 203023240,
+        "nationality": "Việt Nam",
+        "number_household": "321",
+        "folk": "Kinh",
+        "img": "http://dummyimage.com/166x100.png/cc0000/ffffff",
+        "matKhau":"1234"
+      },
+      {
+        "name": "Nguyễn Thị E",
+        "date": "3/25/2022",
+        "country": "46 Roxbury Hill",
+        "weedding": true,
+        "sex": true,
+        "CMND": 203023240,
+        "nationality": "Việt Nam",
+        "number_household": "321",
+        "folk": "Kinh",
+        "img": "http://dummyimage.com/166x100.png/cc0000/ffffff",
+        "matKhau":"1234"
+      }   
+    ],
+    "tien_an_tien_su":[
+        {
+            "CMND": "203023240",
+            "date": "1/1/2001",
+            "violate_error": "Gây rối trật tự nơi công cộng và gây tai nạn giao thông",
+            "penalty": "Phạt hành chính"
+        },
+        {
+            "CMND": "203023240",
+            "date": "1/1/2001",
+            "violate_error": "Đánh bạc",
+            "penalty": "Phạt hành chính"
+        },
+        {
+            "CMND": "203023240",
+            "date": "1/1/2001",
+            "violate_error": "Đánh bạc",
+            "penalty": "Phạt hành chính"
+        },
+        {
+            "CMND": "203023240",
+            "date": "1/1/2001",
+            "violate_error": "Đánh bạc",
+            "penalty": "Phạt hành chính"
+        },
+        {
+            "CMND": "203023240",
+            "date": "1/1/2001",
+            "violate_error": "Đánh bạc",
+            "penalty": "Phạt hành chính"
+        }
+    ],
+    "danh_sach_can_bo":[
+      {
+        "name": "Lê Văn A",
+        "date": "3/25/2022",
+        "country": "46 Roxbury Hill",
+        "weedding": false,
+        "sex": true,
+        "CMND": 203023240,
+        "nationality": "Việt Nam",
+        "folk": "Kinh",
+        "img": "http://dummyimage.com/166x100.png/cc0000/ffffff",
+        "office": "UBND Huyện A",
+        "location" : "Chủ tịch huyện"
+      },
+      {
+        "name": "Lê Thị D",
+        "date": "3/25/2022",
+        "country": "46 Roxbury Hill",
+        "weedding": false,
+        "sex": true,
+        "CMND": 203023240,
+        "nationality": "Việt Nam",
+        "number_household": "321",
+        "folk": "Kinh",
+        "img": "http://dummyimage.com/166x100.png/cc0000/ffffff",
+        "office": "UBND Huyện A",
+        "location" : "Kế toán"
+      },
+      {
+        "name": "Hoàng Thị C",
+        "date": "3/25/2022",
+        "country": "46 Roxbury Hill",
+        "weedding": false,
+        "sex": true,
+        "CMND": 203023240,
+        "nationality": "Việt Nam",
+        "number_household": "321",
+        "folk": "Kinh",
+        "img": "http://dummyimage.com/166x100.png/cc0000/ffffff",
+        "office": "UBND Huyện A",
+        "location" : "Chuyên viên"
+      },
+      {
+        "name": "Nguyễn Thị D",
+        "date": "3/25/2022",
+        "country": "46 Roxbury Hill",
+        "weedding": false,
+        "sex": true,
+        "CMND": 203023240,
+        "nationality": "Việt Nam",
+        "number_household": "321",
+        "folk": "Kinh",
+        "img": "http://dummyimage.com/166x100.png/cc0000/ffffff",
+        "office": "UBND Huyện A",
+        "location" : "Chuyên viên"
+      }
+    ]
+  }
