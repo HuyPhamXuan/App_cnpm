@@ -28,64 +28,7 @@ class NguoiThan extends Component{
         )
     }
 }
-const  data = [
-    {
-        name: "Lê Văn A",
-        date: "01/01/1995",
-        cmnd: "111222333",
-        nation: "Kinh",
-        sex: "Nam",
-        country: "Việt Nam",
-        weeding: "Đã kết hôn",
-        work: "Bác sĩ",
-        prison: ""
-    },
-    {
-        name: "Lê Văn B",
-        date: "01/01/1995",
-        cmnd: "111222111",
-        nation: "Kinh",
-        sex: "Nam",
-        country: "Việt Nam",
-        weeding: "Đã kết hôn",
-        work: "Bác sĩ",
-        prison: ""
-    },
-    {
-        name: "Lê Văn C",
-        date: "01/01/1995",
-        cmnd: "111222333",
-        nation: "Kinh",
-        sex: "Nam",
-        country: "Việt Nam",
-        weeding: "Đã kết hôn",
-        work: "Bác sĩ",
-        prison: ""
-    },
-    {
-        name: "Lê Thị D",
-        date: "01/01/1995",
-        cmnd: "111222444",
-        nation: "Kinh",
-        sex: "Nữ",
-        country: "Việt Nam",
-        weeding: "Đã kết hôn",
-        work: "Giáo viên",
-        prison: ""
-    },
-    {
-        name: "Lê Thị F",
-        date: "01/01/1995",
-        cmnd: "111222555",
-        nation: "Kinh",
-        sex: "Nữ",
-        country: "Việt Nam",
-        weeding: "Đã kết hôn",
-        work: "Bác sĩ",
-        prison: ""
-    },
 
-]
 class ThongTinThanNhan extends Component{
     constructor(props){
         super(props)

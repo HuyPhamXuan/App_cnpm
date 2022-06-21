@@ -10,7 +10,8 @@ class SignIn extends Component{
         this.state = {
             text_CMND: "",
             text_Pass: "",
-            sign_in: 1
+            sign_in: 1,
+            err: ""
         }
     }
     onChangeCMND = (text)=>{
@@ -30,21 +31,33 @@ class SignIn extends Component{
         }
     }
     */
+    checkValidate = () =>{
+        let err = "Tài khoản hoặc mật khẩu không chính xác"
+        if(this.state.text_CMND.length != 9) return err;
+    }
     signIn = async () => {
+        
         let a = await postData({
-            "id": this.state.text_CMND,
+            "cmnd": this.state.text_CMND,
             "password": this.state.text_Pass
-        },"https://vncitizen.deta.dev/api/v1/login" )  
+        },"https://backendcnpmem.herokuapp.com/api/signinCongDan" )  
            
         if(a.token){
             this.props.navigation.navigate("Bottom_Navigator") 
             storeData('token', a.token)
             this.props.dispatch({
-                type:'GET_INFO',
-                info: a.info
+                type:'SIGN_IN',
+                signIn: a.user
             })  
         }
+        else{
+            this.setState({
+                err:"Tài khoản hoặc mật khẩu không chính xác"
+            })
+        }
+        
 
+        //this.props.navigation.navigate("Bottom_Navigator")
    
     }
     render(){
@@ -53,7 +66,7 @@ class SignIn extends Component{
             <View style = { styles.screen }>
                 <View style = { styles.box }>
                     <View style = { styles.box_text } >
-                        <Text style ={{ color: "#00008B", fontSize: 40, bottom: 30}}>ĐĂNG NHẬP</Text>
+                        <Text style ={{ color: "#00008B", fontSize: 40, bottom: 20}}>ĐĂNG NHẬP</Text>
                     </View>
                     <Text style = { styles.text1 }>Nhập Căn Cước/CMND:</Text>
                     <View style = { styles.box_input1 }>
@@ -73,6 +86,9 @@ class SignIn extends Component{
                                 this.onChangePass(text)
                             }}
                         />
+                    </View>
+                    <View style = {{ width: width - 120, height: 25,  justifyContent:"center", marginLeft: 60,}}>
+                        <Text style = {{color:"#8B0000"}}>{this.state.err}</Text>
                     </View>
                     <View style = { styles.box_button }>
                         <TouchableOpacity
@@ -99,13 +115,14 @@ export default connect(mapStatetoProps)(SignIn);
 
 var styles = StyleSheet.create({
     screen:{
-        backgroundColor: "#FF4500",
+        backgroundColor: "#FFE4B5",
         justifyContent: "center",
         flex:1
     },
     box:{
         width: width,
         height: 280,
+        
     },
     box_text:{
         flex:1.3,
@@ -144,16 +161,16 @@ var styles = StyleSheet.create({
         borderRadius:5
     },
     text1:{
-        color: "white", 
-        fontSize: 18,
+        color: "#00008B", 
+        fontSize: 16,
         marginLeft: 60,
-        bottom:-7
+        bottom:-3
     },
     text2:{
-        color: "white",
-        fontSize: 18,
+        color: "#00008B",
+        fontSize: 16,
         marginLeft: 60,
-        bottom: -7
+        bottom: -3
     },
     button:{
         height:45,

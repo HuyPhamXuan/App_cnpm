@@ -8,6 +8,16 @@ import { connect } from "react-redux";
 import { removeValue } from '../storage'
 const { width, height } = Dimensions.get("window")
 class Person extends Component{
+    componentDidMount(){
+        let arr 
+        arr = this.props.all_citizen.data.filter((val,idx)=>{
+            console.log(this.props.thong_tin_ca_nhan.numberHousehold)
+            if (this.props.thong_tin_ca_nhan.numberHousehold == val.numberHousehold){
+                return true
+            }
+        })
+        console.log("arr = :", arr)
+    }
     render(){
         return(
             <>
@@ -15,7 +25,7 @@ class Person extends Component{
                 center = { <Text style = {{ fontSize: 20, color:"white"}}>Cá nhân</Text>}
             />
             <View style = {{flex:1, backgroundColor:"#D3D3D3"}}>
-                <BoxAvt navigation = { this.props.navigation }></BoxAvt>
+                <BoxAvt navigation = { this.props.navigation } name = {this.props.thong_tin_ca_nhan.name}></BoxAvt>
                 <Line></Line>
                 <View style = {{ marginTop:10}}></View>
                 <RowBoxMenu
@@ -59,7 +69,8 @@ class Person extends Component{
 function mapStatetoProps(state){
     return {
         signIn: state.signIn,
-        thong_tin_ca_nhan: state.thong_tin_ca_nhan
+        thong_tin_ca_nhan: state.thong_tin_ca_nhan,
+        all_citizen: state.all_citizen
     };
 }
 export default connect(mapStatetoProps)(Person);

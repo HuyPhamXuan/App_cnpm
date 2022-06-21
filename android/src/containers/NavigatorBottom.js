@@ -13,9 +13,7 @@ export default class NavigatorBottom extends Component{
         return(
             <tabBottom.Navigator
                 tabBar={props => <BottomNavigator {...props}/>}
-                screenOptions={{headerShown :false, tabBarHideOnKeyboard: true}}
-
-                
+                screenOptions={{headerShown :false, tabBarHideOnKeyboard: true}}          
             >
                 <tabBottom.Screen name = "HomeContainer" component={ HomeContainer }/>
                 <tabBottom.Screen name = "ServiceContainer" component={ ServiceContainer }/>

@@ -12,20 +12,26 @@ const { width, height } = Dimensions.get("window")
     constructor(props) {
         super(props)
         this.state = {
-            tien_an_tien_su:"",
+            tien_an_tien_su:[],
             tableHead: ['Ngày vi phạm', 'Loại hình phạt', 'Lỗi vi phạm',],
+            date: ""
         }
     }
     componentDidMount(){
         const arr = []
-        this.props.tien_an_tien_su.map((value) => {
-            let sub_arr = [value.date, value.violate_error, value.penalty]
+        this.props.thong_tin_ca_nhan.TienAnTienSu.map((value) => {
+            let date = value.date.split("T")
+            let sub_arr = [date[0], value.violationError, value.penalty]
             arr.push(sub_arr)
         })
         this.setState({
             tien_an_tien_su: arr
         })
-        console.log(arr)
+        let date
+        date = this.props.thong_tin_ca_nhan.date.split("T")
+        this.setState({
+            date:date[0]
+        })
     }
     render(){
         return(
@@ -57,21 +63,21 @@ const { width, height } = Dimensions.get("window")
                     <TextInput
                         style = { styles.text_ip_name }
                         editable = { false }
-                        value = {this.props.thong_tin_ca_nhan.fullname}
+                        value = {this.props.thong_tin_ca_nhan.name}
                     />
                     <View style = {{ marginBottom:10 }}></View>
                     <Text>Ngày tháng năm sinh:</Text>
                     <TextInput
                         style = { styles.text_ip_name }
                         editable = { false }
-                        value = {this.props.thong_tin_ca_nhan.birthday}
+                        value = {this.state.date}
                     />
                     <View style = {{ marginBottom:10 }}></View>
                     <Text>Căn cước/CMND:</Text>
                     <TextInput
                         style = { styles.text_ip_name }
                         editable = { false }
-                        value = {this.props.thong_tin_ca_nhan.cmnd}
+                        value = {String(this.props.thong_tin_ca_nhan.cmnd)}
                     />
                     <View style = {{ marginBottom:10 }}></View>
                     <View style = {{ height: 22, width: width, flexDirection:"row"}}>
@@ -94,7 +100,7 @@ const { width, height } = Dimensions.get("window")
                             <TextInput
                                 style = { styles.text_ip_sex }
                                 editable = { false }
-                                value = {this.props.thong_tin_ca_nhan.gender?"Nam":"Nữ"}
+                                value = {this.props.thong_tin_ca_nhan.sex?"Nam":"Nữ"}
                             />   
                         </View>
                     </View>
@@ -133,7 +139,7 @@ const { width, height } = Dimensions.get("window")
                             <TextInput
                                 style = { styles.text_ip_sex }
                                 editable = { false }
-                                value = {this.props.thong_tin_ca_nhan.married? "Đã kết hôn":"Chưa kết hôn"}
+                                value = {this.props.thong_tin_ca_nhan.weedding? "Đã kết hôn":"Chưa kết hôn"}
                             />   
                         </View>
                     </View>

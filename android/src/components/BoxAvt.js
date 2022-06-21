@@ -18,7 +18,7 @@ class BoxAvt extends Component{
                 </View>
                 <View style = { styles.boxtext }>
                     <View style = { styles.boxsubtext1 }>
-                        <Text style = {{ marginLeft:10, fontSize:20, bottom: -5, color:"#FF4500" }} >{this.props.thong_tin_ca_nhan.fullname}</Text>
+                        <Text style = {{ marginLeft:10, fontSize:20, bottom: -5, color:"#FF4500" }} >{this.props.name}</Text>
                     </View>
                     <View style = { styles.boxsubtext2 }>
                         <Text style = {{ marginLeft:10, bottom: 7, color:"#696969" }}>Xem thông tin cá nhân</Text>

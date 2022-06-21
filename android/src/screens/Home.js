@@ -4,25 +4,32 @@ import { BigNewpaper, LitleNewpaper } from '../components/Newpaper'
 import Line from '../components/Line'
 import Header from '../components/Header'
 import { connect } from "react-redux";
-import { getData } from "../connect";
+import { getData, postData } from "../connect";
 const data = [1,2,3,4,5,6,7,8,9]
 class Home extends Component{
     componentDidMount(){
-        getData("http://10.0.2.2:3000/tien_an_tien_su").then((res) =>{
+        postData({
+            "_id": this.props.signIn.ThongTinCaNhan
+        },"https://backendcnpmem.herokuapp.com/api/readThongTinCaNhan").then((res) =>{
             this.props.dispatch({
-                type:"GET_VIOLATE",
-                tien_an_tien_su: res
+                type:"GET_INFO",
+                info: res
             })
         })
-        getData("http://10.0.2.2:3000/thanh_vien").then((res) =>{
+        getData("https://backendcnpmem.herokuapp.com/api/ThongTinCaNhan").then((res) =>{
             this.props.dispatch({
-                type:"GET_HOME",
-                than_nhan: res
+                type:"GET_ALL_CITIZEN",
+                all_citizen: res
             })
         })
-        setTimeout(() => {
-            console.log("mm:",this.props.thong_tin_ca_nhan)
-        }, 2000);
+        getData("https://backendcnpmem.herokuapp.com/api/ThongTinCanBo").then((res) =>{
+            this.props.dispatch({
+                type:"GET_ALL_OFFICIALS",
+                all_canbo: res
+            })
+        })      
+
+
     }
     render(){
         return(
@@ -72,7 +79,8 @@ class Home extends Component{
 }
 function mapStatetoProps(state){
     return {
-        thong_tin_ca_nhan: state.thong_tin_ca_nhan
+        thong_tin_ca_nhan: state.thong_tin_ca_nhan,
+        signIn: state.signIn
     };
 }
 export default connect(mapStatetoProps)(Home);
